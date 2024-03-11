@@ -1,11 +1,12 @@
-import { Button } from "./components/Button/Button";
+import { CustomizableButton } from "./components/CustomizableButton/CustomizableButton";
+
 import "./App.scss";
 
 function App() {
   return (
     <>
       <div className="card">
-        <Button label="Button" onClick={() => console.log("click!")} />
+        <CustomizableButton />
       </div>
     </>
   );
