@@ -1,4 +1,5 @@
-import { FC } from "react";
+import { FC, ComponentProps } from "react";
+import classNames from "classnames";
 import classes from "./Button.module.scss";
 
 type ButtonProps = {
@@ -6,15 +7,19 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
-export const Button: FC<ButtonProps & React.ComponentProps<"button">> = ({
+export const Button: FC<ButtonProps & ComponentProps<"button">> = ({
   label = "Button",
+  className,
   onClick,
   ...other
 }): JSX.Element => {
   return (
     <button
       type="button"
-      className={classes.button}
+      className={classNames(classes.button, className, {
+        // todo: add settign-dependent classes to make button customizable
+        // [classes.fullWidth]: fullWidth,
+      })}
       onClick={onClick}
       {...other}
     >

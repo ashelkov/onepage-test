@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "../Button/Button";
+import { ButtonSettings } from "../ButtonSettings/ButtonSettings";
 import { SettingsPopover } from "../SettingsPopover/SettingsPopover";
 
 export const CustomizableButton = () => {
@@ -9,14 +10,7 @@ export const CustomizableButton = () => {
     <SettingsPopover
       isOpen={isSettingsOpen}
       setIsOpen={setIsSettingsOpen}
-      content={
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-          aliquam quas, perferendis commodi ipsam quae expedita cumque voluptate
-          voluptas animi facere ab quod corrupti ipsum? Corporis,
-          exercitationem. Maiores, delectus recusandae?
-        </p>
-      }
+      content={<ButtonSettings onCloseClick={() => setIsSettingsOpen(false)} />}
     >
       <Button
         onClick={() => setIsSettingsOpen(!isSettingsOpen)}
