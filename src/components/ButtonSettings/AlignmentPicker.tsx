@@ -13,36 +13,43 @@ export type VerticalAlignment = "top" | "bottom" | "center";
 export type Alignment = HorizontalAlignment | VerticalAlignment;
 
 type AlignmentPickerProps = {
-  type: "horizontal" | "vertical";
+  variant: "horizontal" | "vertical";
   value: Alignment;
-  onChange: (size: Alignment) => void;
+  onChange: (alignment: Alignment) => void;
 };
 
-const HORIZONTAL_OPTIONS = [
+const HORIZONTAL_OPTIONS: {
+  value: HorizontalAlignment;
+  iconSrc: string;
+}[] = [
   { value: "left", iconSrc: horizAlignLeftSrc },
   { value: "center", iconSrc: horizAlignRightSrc },
   { value: "right", iconSrc: horizAlignCenterSrc },
 ];
 
-const VERTICAL_OPTIONS = [
+const VERTICAL_OPTIONS: {
+  value: VerticalAlignment;
+  iconSrc: string;
+}[] = [
   { value: "top", iconSrc: vertAlignTopSrc },
   { value: "center", iconSrc: vertAlignCenterSrc },
   { value: "bottom", iconSrc: vertAlignBottomSrc },
 ];
 
 export const AlignmentPicker = ({
-  type,
+  variant,
   onChange,
   value,
 }: AlignmentPickerProps) => {
-  const options = type === "vertical" ? VERTICAL_OPTIONS : HORIZONTAL_OPTIONS;
+  const options =
+    variant === "vertical" ? VERTICAL_OPTIONS : HORIZONTAL_OPTIONS;
 
   return (
     <div className={classes.container}>
       {options.map((option) => (
         <button
           key={option.value}
-          onClick={() => onChange(value)}
+          onClick={() => onChange(option.value)}
           className={classNames(classes.option, {
             [classes.active]: option.value === value,
           })}
