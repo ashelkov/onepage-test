@@ -1,9 +1,9 @@
-import { useRef, useState } from "react";
+import { MouseEvent, useRef, useState } from "react";
 import { observer } from "mobx-react-lite";
 import classNames from "classnames";
 
 import { Button } from "../Button/Button";
-import { ButtonSettings } from "../ButtonSettings/ButtonSettings";
+import { ButtonSettings } from "./ButtonSettings";
 import { SettingsPopover } from "../SettingsPopover/SettingsPopover";
 
 import { ButtonSettingsStore } from "../../stores/ButtonSettings.store";
@@ -16,6 +16,11 @@ export const CustomizableButton = observer(() => {
   const storeRef = useRef(new ButtonSettingsStore());
   const { size, label, externaLink, alignHorizontal, alignVertical } =
     storeRef.current;
+
+  const onButtonClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsSettingsOpen(!isSettingsOpen);
+  };
 
   return (
     <SettingsPopover
@@ -30,7 +35,7 @@ export const CustomizableButton = observer(() => {
     >
       <Button
         label={label}
-        onClick={() => setIsSettingsOpen(!isSettingsOpen)}
+        onClick={onButtonClick}
         href={externaLink}
         size={size}
         className={classNames(

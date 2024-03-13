@@ -1,18 +1,20 @@
 import { FormEvent } from "react";
 import { observer } from "mobx-react-lite";
 
-import { ButtonSizePicker, ButtonSize } from "./ButtonSizePicker";
-import {
-  Alignment,
-  AlignmentPicker,
-  HorizontalAlignment,
-  VerticalAlignment,
-} from "./AlignmentPicker";
+import { AlignmentPicker } from "../AlignmentPicker/AlignmentPicker";
+import { ButtonSizePicker } from "../ButtonSizePicker/ButtonSizePicker";
 import { TextInput } from "../TextInput/TextInput";
 import { ButtonSettingsStore } from "../../stores/ButtonSettings.store";
 
 import closeIconSrc from "../../assets/icons/close.svg";
 import classes from "./ButtonSettings.module.scss";
+
+import {
+  Alignment,
+  ButtonSize,
+  HorizontalAlignment,
+  VerticalAlignment,
+} from "../../types";
 
 type ButtonSettingsProps = {
   onCloseClick: () => void;

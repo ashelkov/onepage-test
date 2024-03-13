@@ -1,9 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { ButtonSize } from "../components/ButtonSettings/ButtonSizePicker";
-import {
-  HorizontalAlignment,
-  VerticalAlignment,
-} from "../components/ButtonSettings/AlignmentPicker";
+import { ButtonSize, HorizontalAlignment, VerticalAlignment } from "../types";
 
 export class ButtonSettingsStore {
   label: string = "Button";

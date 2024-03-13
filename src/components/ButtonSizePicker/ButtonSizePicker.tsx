@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import classes from "./ButtonSizePicker.module.scss";
-
-export type ButtonSize = "xs" | "s" | "m" | "l" | "xl";
+import { ButtonSize } from "../../types";
 
 type ButtonSizePickerProps = {
   value: ButtonSize;

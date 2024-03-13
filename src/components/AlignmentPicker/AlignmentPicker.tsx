@@ -8,9 +8,7 @@ import vertAlignTopSrc from "../../assets/icons/vertical-align-top.svg";
 import vertAlignBottomSrc from "../../assets/icons/vertical-align-bottom.svg";
 import vertAlignCenterSrc from "../../assets/icons/vertical-align-center.svg";
 
-export type HorizontalAlignment = "right" | "left" | "center";
-export type VerticalAlignment = "top" | "bottom" | "middle";
-export type Alignment = HorizontalAlignment | VerticalAlignment;
+import { Alignment, HorizontalAlignment, VerticalAlignment } from "../../types";
 
 type AlignmentPickerProps = {
   variant: "horizontal" | "vertical";

@@ -1,12 +1,12 @@
-import { FC, ComponentProps, forwardRef } from "react";
+import { FC, ComponentProps, forwardRef, MouseEventHandler } from "react";
 import classNames from "classnames";
 import classes from "./Button.module.scss";
-import { ButtonSize } from "../ButtonSettings/ButtonSizePicker";
+import { ButtonSize } from "../../types";
 
 type ButtonProps = {
   label?: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
   size: ButtonSize;
-  onClick?: () => void;
 };
 
 // used to avoid button height collapse when no caption
