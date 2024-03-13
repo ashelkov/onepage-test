@@ -1,6 +1,9 @@
 import { ReactElement } from "react";
 import { Popover } from "react-tiny-popover";
+import { Transition, TransitionStatus } from "react-transition-group";
+
 import classes from "./SettingsPopover.module.scss";
+import classNames from "classnames";
 
 type SettingsPopoverProps = {
   isOpen: boolean;
@@ -15,19 +18,25 @@ export const SettingsPopover = ({
   content,
   children,
 }: SettingsPopoverProps) => {
-  const popoverContent = (
-    <div className={classes.contentContainer}>{content}</div>
+  const getPopoverContent = (state: TransitionStatus) => (
+    <div className={classNames(classes.contentContainer, classes[state])}>
+      {content}
+    </div>
   );
 
   return (
-    <Popover
-      isOpen={isOpen}
-      onClickOutside={() => setIsOpen(false)}
-      positions={["left", "right"]} // preferred positions by priority
-      align="start"
-      content={popoverContent}
-    >
-      {children}
-    </Popover>
+    <Transition in={isOpen} timeout={300}>
+      {(state: TransitionStatus) => (
+        <Popover
+          isOpen={isOpen || state === "exiting"}
+          onClickOutside={() => setIsOpen(false)}
+          positions={["left", "right"]} // preferred positions by priority
+          align="start"
+          content={getPopoverContent(state)}
+        >
+          {children}
+        </Popover>
+      )}
+    </Transition>
   );
 };
