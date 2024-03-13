@@ -1,4 +1,4 @@
-import { MouseEvent, useRef, useState } from "react";
+import { MouseEvent, useMemo, useState } from "react";
 import { observer } from "mobx-react-lite";
 import classNames from "classnames";
 
@@ -13,9 +13,8 @@ import classes from "./CustomizableButton.module.scss";
 export const CustomizableButton = observer(() => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
-  const storeRef = useRef(new ButtonSettingsStore());
-  const { size, label, externaLink, alignHorizontal, alignVertical } =
-    storeRef.current;
+  const store = useMemo(() => new ButtonSettingsStore(), []);
+  const { size, label, externaLink, alignHorizontal, alignVertical } = store;
 
   const onButtonClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -29,7 +28,7 @@ export const CustomizableButton = observer(() => {
       content={
         <ButtonSettings
           onCloseClick={() => setIsSettingsOpen(false)}
-          store={storeRef.current}
+          store={store}
         />
       }
     >
