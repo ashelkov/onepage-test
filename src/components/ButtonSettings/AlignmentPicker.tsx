@@ -9,7 +9,7 @@ import vertAlignBottomSrc from "../../assets/icons/vertical-align-bottom.svg";
 import vertAlignCenterSrc from "../../assets/icons/vertical-align-center.svg";
 
 export type HorizontalAlignment = "right" | "left" | "center";
-export type VerticalAlignment = "top" | "bottom" | "center";
+export type VerticalAlignment = "top" | "bottom" | "middle";
 export type Alignment = HorizontalAlignment | VerticalAlignment;
 
 type AlignmentPickerProps = {
@@ -23,8 +23,8 @@ const HORIZONTAL_OPTIONS: {
   iconSrc: string;
 }[] = [
   { value: "left", iconSrc: horizAlignLeftSrc },
-  { value: "center", iconSrc: horizAlignRightSrc },
-  { value: "right", iconSrc: horizAlignCenterSrc },
+  { value: "center", iconSrc: horizAlignCenterSrc },
+  { value: "right", iconSrc: horizAlignRightSrc },
 ];
 
 const VERTICAL_OPTIONS: {
@@ -32,7 +32,7 @@ const VERTICAL_OPTIONS: {
   iconSrc: string;
 }[] = [
   { value: "top", iconSrc: vertAlignTopSrc },
-  { value: "center", iconSrc: vertAlignCenterSrc },
+  { value: "middle", iconSrc: vertAlignCenterSrc },
   { value: "bottom", iconSrc: vertAlignBottomSrc },
 ];
 

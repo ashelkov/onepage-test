@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import { observer } from "mobx-react-lite";
 
-import { ButtonSizePicker, Size } from "./ButtonSizePicker";
+import { ButtonSizePicker, ButtonSize } from "./ButtonSizePicker";
 import {
   Alignment,
   AlignmentPicker,
@@ -9,25 +9,25 @@ import {
   VerticalAlignment,
 } from "./AlignmentPicker";
 import { TextInput } from "../TextInput/TextInput";
-
-import store from "../../stores/buttonSettings.store";
+import { ButtonSettingsStore } from "../../stores/ButtonSettings.store";
 
 import closeIconSrc from "../../assets/icons/close.svg";
 import classes from "./ButtonSettings.module.scss";
 
 type ButtonSettingsProps = {
   onCloseClick: () => void;
+  store: ButtonSettingsStore;
 };
 
 export const ButtonSettings = observer(
-  ({ onCloseClick }: ButtonSettingsProps) => {
+  ({ onCloseClick, store }: ButtonSettingsProps) => {
     const onLabelChange = (e: FormEvent<HTMLInputElement>) =>
       store.setLabel(e.currentTarget.value);
 
     const onExternalLinkChange = (e: FormEvent<HTMLInputElement>) =>
       store.setExternalLink(e.currentTarget.value);
 
-    const onSizeChange = (size: Size) => store.setSize(size);
+    const onSizeChange = (size: ButtonSize) => store.setSize(size);
 
     const onHorizontalAlignmentChange = (alignment: Alignment) =>
       store.setAlignHorizontal(alignment as HorizontalAlignment);

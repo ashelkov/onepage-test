@@ -1,18 +1,18 @@
 import classNames from "classnames";
 import classes from "./ButtonSizePicker.module.scss";
 
-export type Size = "xs" | "s" | "m" | "l" | "xl";
+export type ButtonSize = "xs" | "s" | "m" | "l" | "xl";
 
 type ButtonSizePickerProps = {
-  value: Size;
-  onChange: (size: Size) => void;
+  value: ButtonSize;
+  onChange: (size: ButtonSize) => void;
 };
 
 export const ButtonSizePicker = ({
   onChange,
   value,
 }: ButtonSizePickerProps) => {
-  const values: Size[] = ["xl", "l", "m", "s", "xs"];
+  const values: ButtonSize[] = ["xl", "l", "m", "s", "xs"];
 
   return (
     <div className={classes.container}>

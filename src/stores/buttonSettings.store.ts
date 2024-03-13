@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx";
-import { Size } from "../components/ButtonSettings/ButtonSizePicker";
+import { ButtonSize } from "../components/ButtonSettings/ButtonSizePicker";
 import {
   HorizontalAlignment,
   VerticalAlignment,
@@ -8,9 +8,9 @@ import {
 export class ButtonSettingsStore {
   label: string = "Button";
   externaLink: string = "";
-  size: Size = "m";
+  size: ButtonSize = "m";
   alignHorizontal: HorizontalAlignment = "center";
-  alignVertical: VerticalAlignment = "center";
+  alignVertical: VerticalAlignment = "middle";
 
   constructor() {
     makeAutoObservable(this);
@@ -24,7 +24,7 @@ export class ButtonSettingsStore {
     this.externaLink = link;
   };
 
-  setSize = (size: Size) => {
+  setSize = (size: ButtonSize) => {
     this.size = size;
   };
 
@@ -36,5 +36,3 @@ export class ButtonSettingsStore {
     this.alignVertical = alignment;
   };
 }
-
-export default new ButtonSettingsStore();

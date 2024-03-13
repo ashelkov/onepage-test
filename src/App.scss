@@ -4,5 +4,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
+}
+
+.presentation-box {
   background-color: $background-color;
+  width: 400px;
+  height: 400px;
+  position: relative;
 }

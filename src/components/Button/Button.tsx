@@ -1,29 +1,32 @@
-import { FC, ComponentProps } from "react";
+import { FC, ComponentProps, forwardRef } from "react";
 import classNames from "classnames";
 import classes from "./Button.module.scss";
+import { ButtonSize } from "../ButtonSettings/ButtonSizePicker";
 
 type ButtonProps = {
   label?: string;
+  size: ButtonSize;
   onClick?: () => void;
 };
 
-export const Button: FC<ButtonProps & ComponentProps<"button">> = ({
-  label = "Button",
-  className,
-  onClick,
-  ...other
-}): JSX.Element => {
-  return (
-    <button
-      type="button"
-      className={classNames(classes.button, className, {
-        // todo: add settign-dependent classes to make button customizable
-        // [classes.fullWidth]: fullWidth,
-      })}
-      onClick={onClick}
-      {...other}
-    >
-      {label}
-    </button>
-  );
-};
+// used to avoid button height collapse when no caption
+const NON_BREAKING_SPACE = "\xa0";
+
+export const Button: FC<ButtonProps & ComponentProps<"a">> = forwardRef(
+  ({ label, className, onClick, size = "m", ...other }, ref): JSX.Element => {
+    return (
+      <a
+        className={classNames(
+          classes.button,
+          classes[`size-${size}`],
+          className
+        )}
+        onClick={onClick}
+        ref={ref}
+        {...other}
+      >
+        {label || NON_BREAKING_SPACE}
+      </a>
+    );
+  }
+);

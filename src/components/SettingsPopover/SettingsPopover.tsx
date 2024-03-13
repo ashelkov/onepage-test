@@ -23,11 +23,11 @@ export const SettingsPopover = ({
     <Popover
       isOpen={isOpen}
       onClickOutside={() => setIsOpen(false)}
-      positions={["right", "left"]} // preferred positions by priority
+      positions={["left", "right"]} // preferred positions by priority
       align="start"
       content={popoverContent}
     >
-      <div className={classes.elementWrapper}>{children}</div>
+      {children}
     </Popover>
   );
 };

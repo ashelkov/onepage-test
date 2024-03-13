@@ -5,7 +5,7 @@ import "./App.scss";
 function App() {
   return (
     <>
-      <div className="card">
+      <div className="presentation-box">
         <CustomizableButton />
       </div>
     </>
