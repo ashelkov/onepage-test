@@ -1,30 +1,17 @@
-# React + TypeScript + Vite
+## Onepage Test Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [Task description](https://onepageio.notion.site/Onepage-Test-Task-80af81b394e843839b860ecae121b6f1#007c59ef82ca478b823931821da5c3c1)
+- [Task designs](https://www.figma.com/file/y55sGKIFRTdINp3LgQMNrE/FE-engineer-%2F-Test?type=design&node-id=1-146&mode=design&t=kaGVZvfO2o9KetxS-0)
 
-Currently, two official plugins are available:
+## How to run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This repostory is started with [Vite](https://vitejs.dev/).
+To run locally you need to:
 
-## Expanding the ESLint configuration
+- install dependencies: `npm install`
+- start local dev server: `npm run dev`
+- open [http://localhost:5173](http://localhost:5173/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Screenshot
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![Windy Particles](./public/screenshot.png)
