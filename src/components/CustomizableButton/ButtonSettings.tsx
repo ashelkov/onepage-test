@@ -1,7 +1,8 @@
 import { FormEvent } from "react";
 import { observer } from "mobx-react-lite";
 
-import { AlignmentPicker } from "../AlignmentPicker/AlignmentPicker";
+import { HorizontalAlignmentPicker } from "../HorizontalAlignmentPicker/HorizontalAlignmentPicker";
+import { VerticalAlignmentPicker } from "../VerticalAlignmentPicker/VerticalAlignmentPicker";
 import { ButtonSizePicker } from "../ButtonSizePicker/ButtonSizePicker";
 import { TextInput } from "../TextInput/TextInput";
 import { ButtonSettingsStore } from "../../stores/ButtonSettings.store";
@@ -10,7 +11,6 @@ import closeIconSrc from "../../assets/icons/close.svg";
 import classes from "./ButtonSettings.module.scss";
 
 import {
-  Alignment,
   ButtonSize,
   HorizontalAlignment,
   VerticalAlignment,
@@ -31,11 +31,11 @@ export const ButtonSettings = observer(
 
     const onSizeChange = (size: ButtonSize) => store.setSize(size);
 
-    const onHorizontalAlignmentChange = (alignment: Alignment) =>
-      store.setAlignHorizontal(alignment as HorizontalAlignment);
+    const onHorizontalAlignmentChange = (alignment: HorizontalAlignment) =>
+      store.setAlignHorizontal(alignment);
 
-    const onVerticalAlignmentChange = (alignment: Alignment) =>
-      store.setAlignVertical(alignment as VerticalAlignment);
+    const onVerticalAlignmentChange = (alignment: VerticalAlignment) =>
+      store.setAlignVertical(alignment);
 
     return (
       <div className={classes.container}>
@@ -75,14 +75,11 @@ export const ButtonSettings = observer(
 
         <div className={classes.section}>
           <div className={classes.flexRow}>
-            <AlignmentPicker
-              variant="horizontal"
+            <HorizontalAlignmentPicker
               value={store.alignHorizontal}
               onChange={onHorizontalAlignmentChange}
             />
-
-            <AlignmentPicker
-              variant="vertical"
+            <VerticalAlignmentPicker
               value={store.alignVertical}
               onChange={onVerticalAlignmentChange}
             />
