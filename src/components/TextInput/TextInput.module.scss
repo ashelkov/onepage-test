@@ -1,4 +1,5 @@
 $placeholder-color: #b1b1bd;
+$selection-color: #afd3fb;
 
 .input {
   font-size: 14px;
@@ -7,9 +8,14 @@ $placeholder-color: #b1b1bd;
   height: 48px;
   border-radius: 4px;
   padding: 0 12px;
+  color: $font-color;
 
   &::placeholder {
     color: $placeholder-color;
+  }
+
+  &::selection {
+    background: $selection-color;
   }
 
   &.fullWidth {
