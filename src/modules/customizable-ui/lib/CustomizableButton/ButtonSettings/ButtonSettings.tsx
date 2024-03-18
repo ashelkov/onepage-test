@@ -1,20 +1,20 @@
 import { FormEvent } from "react";
 import { observer } from "mobx-react-lite";
 
-import { HorizontalAlignmentPicker } from "../HorizontalAlignmentPicker/HorizontalAlignmentPicker";
-import { VerticalAlignmentPicker } from "../VerticalAlignmentPicker/VerticalAlignmentPicker";
-import { ButtonSizePicker } from "../ButtonSizePicker/ButtonSizePicker";
-import { TextInput } from "../TextInput/TextInput";
-import { ButtonSettingsStore } from "../../stores/ButtonSettings.store";
+import { TextInput } from "@/components";
+import { HorizontalAlignmentPicker } from "../../../components/HorizontalAlignmentPicker/HorizontalAlignmentPicker";
+import { VerticalAlignmentPicker } from "../../../components/VerticalAlignmentPicker/VerticalAlignmentPicker";
+import { ElementSizePicker } from "../../../components/ElementSizePicker/ElementSizePicker";
+import { ButtonSettingsStore } from "./ButtonSettings.store";
 
-import closeIconSrc from "../../assets/icons/close.svg";
+import closeIconSrc from "@/app/assets/icons/close.svg";
 import classes from "./ButtonSettings.module.scss";
 
 import {
-  ButtonSize,
+  ElementSize,
   HorizontalAlignment,
   VerticalAlignment,
-} from "../../types";
+} from "../../../types";
 
 type ButtonSettingsProps = {
   onCloseClick: () => void;
@@ -29,7 +29,7 @@ export const ButtonSettings = observer(
     const onExternalLinkChange = (e: FormEvent<HTMLInputElement>) =>
       store.setExternalLink(e.currentTarget.value);
 
-    const onSizeChange = (size: ButtonSize) => store.setSize(size);
+    const onSizeChange = (size: ElementSize) => store.setSize(size);
 
     const onHorizontalAlignmentChange = (alignment: HorizontalAlignment) =>
       store.setAlignHorizontal(alignment);
@@ -70,7 +70,7 @@ export const ButtonSettings = observer(
 
         <div className={classes.section}>
           <label>Size</label>
-          <ButtonSizePicker value={store.size} onChange={onSizeChange} />
+          <ElementSizePicker value={store.size} onChange={onSizeChange} />
         </div>
 
         <div className={classes.section}>

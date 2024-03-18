@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import classes from "./HorizontalAlignmentPicker.module.scss";
 
-import alignLeftSrc from "../../assets/icons/horizontal-align-left.svg";
-import alignRightSrc from "../../assets/icons/horizontal-align-right.svg";
-import alignCenterSrc from "../../assets/icons/horizontal-align-center.svg";
+import alignLeftSrc from "./icons/horizontal-align-left.svg";
+import alignRightSrc from "./icons/horizontal-align-right.svg";
+import alignCenterSrc from "./icons/horizontal-align-center.svg";
 
 import { HorizontalAlignment } from "../../types";
 

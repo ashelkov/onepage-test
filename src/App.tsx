@@ -1,13 +1,11 @@
-import { CustomizableButton } from "./components/CustomizableButton/CustomizableButton";
+import { HomePage } from "./pages/HomePage";
 
 import "./App.scss";
 
 function App() {
   return (
     <>
-      <div className="presentation-box">
-        <CustomizableButton />
-      </div>
+      <HomePage />
     </>
   );
 }

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 
 import "./main.scss";
-import "./assets/fonts/circular-std/styles.css";
+import "./app/assets/fonts/circular-std/styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

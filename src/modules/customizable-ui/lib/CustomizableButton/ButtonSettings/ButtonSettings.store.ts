@@ -1,18 +1,21 @@
 import { autorun, makeAutoObservable } from "mobx";
 import { v4 as uuidv4 } from "uuid";
-import { ButtonSize, HorizontalAlignment, VerticalAlignment } from "../types";
 import debounce from "debounce";
+import {
+  ElementSize,
+  HorizontalAlignment,
+  VerticalAlignment,
+} from "../../../types";
 
-// simulate an api call with button settings
-const saveButtonSettings = debounce((data) => {
-  console.log(data);
-}, 500);
+import { updateElementParams } from "../../../../../services/api";
+
+const saveButtonSettings = debounce(updateElementParams, 500);
 
 export class ButtonSettingsStore {
   _id: string;
   label: string;
   externaLink: string;
-  size: ButtonSize;
+  size: ElementSize;
   alignHorizontal: HorizontalAlignment;
   alignVertical: VerticalAlignment;
 
@@ -46,7 +49,7 @@ export class ButtonSettingsStore {
     this.externaLink = link;
   };
 
-  setSize = (size: ButtonSize) => {
+  setSize = (size: ElementSize) => {
     this.size = size;
   };
 

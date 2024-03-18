@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import classes from "./VerticalAlignmentPicker.module.scss";
 
-import alignTopSrc from "../../assets/icons/vertical-align-top.svg";
-import alignBottomSrc from "../../assets/icons/vertical-align-bottom.svg";
-import alignCenterSrc from "../../assets/icons/vertical-align-center.svg";
+import alignTopSrc from "./icons/vertical-align-top.svg";
+import alignBottomSrc from "./icons/vertical-align-bottom.svg";
+import alignCenterSrc from "./icons/vertical-align-center.svg";
 
 import { VerticalAlignment } from "../../types";
 

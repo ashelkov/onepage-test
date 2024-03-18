@@ -2,11 +2,11 @@ import { MouseEvent, useMemo, useState } from "react";
 import { observer } from "mobx-react-lite";
 import classNames from "classnames";
 
-import { Button } from "../Button/Button";
-import { ButtonSettings } from "./ButtonSettings";
-import { SettingsPopover } from "../SettingsPopover/SettingsPopover";
+import { Button } from "./Button/Button";
+import { ButtonSettings } from "./ButtonSettings/ButtonSettings";
+import { SettingsPopover } from "../../components/SettingsPopover/SettingsPopover";
 
-import { ButtonSettingsStore } from "../../stores/ButtonSettings.store";
+import { ButtonSettingsStore } from "./ButtonSettings/ButtonSettings.store";
 
 import classes from "./CustomizableButton.module.scss";
 
