@@ -6,12 +6,14 @@
 ## How to run locally
 
 This repostory is started with [Vite](https://vitejs.dev/).
+
 To run locally you need to:
 
 - install dependencies: `npm install`
 - start local dev server: `npm run dev`
 - open [http://localhost:5173](http://localhost:5173/)
 
-## Screenshot
+## Preview
 
+Open [live demo](https://65f8a238d9c7d417de5763a5--heroic-puppy-564fe6.netlify.app/) to preview results.
 ![Windy Particles](./public/screenshot.png)
